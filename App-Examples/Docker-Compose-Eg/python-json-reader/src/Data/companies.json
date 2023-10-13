@@ -1,0 +1,38 @@
+[
+    {
+        "name" : "Big Corporation",
+        "numberOfEmployees" : 10000,
+		"Province" : "ON",
+        "ceo" : "Mary",
+        "isNonProfit" : false,
+        "clientType" : [
+            "Banking",
+            "E-Commerce",
+            "Manufacturing"
+        ],
+        "rating" : 3.9 
+    },
+    {
+        "name" : "Mid-Level Startup",
+        "numberOfEmployees" : 5000,
+        "Province" : "AB",
+        "ceo" : "John",
+        "isNonProfit" : false,
+        "clientType" : [
+            "Crypto",
+            "Customer Service"
+        ],
+        "rating" : 3.5 
+    },
+    {
+        "name" : "Non-Profit",
+        "numberOfEmployees" : 500,
+        "Province" : "BC",
+        "isNonProfit" : true,
+        "clientType" : [
+            "Non-Profit",
+            "Government"
+        ],
+        "rating" : 4.0 
+    }
+]

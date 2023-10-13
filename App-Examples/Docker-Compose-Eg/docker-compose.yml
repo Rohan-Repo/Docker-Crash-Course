@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  # Readymade-Images
+  
+  # nginx Web Server
+  web-server:
+    image: nginx:1.25.2-alpine
+    container_name: nginx-web-server
+    ports:
+      - 1111:80
+    volumes:
+      - ./nginx-web-server:/usr/share/nginx/html
+      
+  # Java Code
+  java-code:
+    image: java:8u111-jdk-alpine
+    container_name: java_code
+    volumes:
+      - ./java-time-zones:/app
+    working_dir: /app
+    command: sh -c "javac DateTimeEg.java && java DateTimeEg"
+
+  # Custom-Image
+  json-reader:
+    build: ./python-json-reader
+    container_name: python_code

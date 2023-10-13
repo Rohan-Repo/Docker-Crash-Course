@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  company-service:
+    build: ./company-info-service
+    volumes:
+      #- /usr/src/app:/usr/src/app 
+      - ./company-info-service:/usr/src/app
+    ports:
+      - 1234:5000
+    networks:
+      - my_network
+    # networks:
+    #   my-network:
+    #       ipv4_address: '172.17.0.11'
+
+  # Instead of a Separate Docker File, we just pulled an Image here
+  display-service:
+    image: php:apache-bullseye
+    volumes:
+      - ./display-service:/var/www/html
+    ports:
+      - 9876:80
+      # Is this image dependent on any other Service/Image, then start that first
+    depends_on:
+      - company-service
+    networks:
+      - my_network
+    # networks:
+    #   my-network:
+    #       ipv4_address: '172.27.224.1'
+
+  # client:
+  #   environment:
+  #     SERVER_URL=http://localhost:1234/
+
+networks:
+  my_network:
+    driver: bridge

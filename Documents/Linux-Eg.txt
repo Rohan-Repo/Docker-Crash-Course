@@ -1,0 +1,107 @@
+Add Logging into Docker-Compose file
+docker-compose logs my_service
+
+docker build -t alpine-linux .
+
+docker run -itd --name alpine-sqlite alpine-linux
+docker exec -it alpine-sqlite /bin/sh
+
+docker run -it alpine-sqlite 
+docker exec -it fd5b9c747860 /bin/sh
+
+docker run -itd alpine
+docker exec -it fd5b9c747860 /bin/sh
+
+7f0ab5ff5544:~# history
+   0 uname -a
+   1 uname -a ; date ; uptime
+   2 sudo apk update
+   3 su -
+   4 apk update
+   5 apk add sqlite3
+   6 sudo apk add sqlite3
+   7 apk add sqlite3
+   8 apk add sqlite
+   9 sqlite
+  10 sqlite --version
+  11 cls
+  12 clear
+  13 sqlite --version
+  14 sqlite3 --version
+  15 sqlite3
+  16 history
+  17 cls
+  18 clear
+  19 pwd
+  20 ls -la
+  21 df -h
+  22 mkdir test
+  23 cd test
+  24 nano text.txt
+  25 vim text.txt
+  26 vi text.txt
+  27 cat text.txt
+  28 exit
+  29 history
+  30 su -
+  31 history
+  32 clear
+  33 history
+  
+  
+docker exec -it alpine_with_sqlite /bin/sh
+
+uname -a ; date ; uptime
+
+pwd
+
+df -h
+
+mkdir testDir
+cd testDir/
+
+vi test.txt
+cat test.txt
+
+sqlite3 --version
+-- Quit SQLite console - (.exit)
+
+sqlite3 /data/mydatabase.db
+
+OR
+
+sqlite3
+.open /data/mydatabase.db
+
+CREATE TABLE Users( id INT PRIMARY KEY, name TEXT, country TEXT );
+
+INSERT INTO Users VALUES( 1, 'John', 'Canada' );
+INSERT INTO Users VALUES( 2, 'Jane', 'Mexico' );
+INSERT INTO Users VALUES( 3, 'Mary', 'USA' );
+INSERT INTO Users VALUES( 4, 'Simon', 'France' );
+
+SELECT * FROM Users;
+
+
+
+
+Static Example:
+
+To make Changes into HTML we have to rebuild our applications
+
+docker build -t nginx-static:0.0.1 .
+docker run -d -p 9876:80 nginx-static:0.0.1
+http://localhost:9876/
+
+Change & in NFL to build again then 
+docker build -t nginx-static:0.0.2 .
+docker run -d -p 1234:80 nginx-static:0.0.2
+http://localhost:1234/
+
+But with Volumes we eliminate that altogether:
+Navigate to http://localhost:1111/
+Make Changes in HTML & Refresh on Browser
+
+Docker-Compose
+Run multiple containers with different Languages and Architectures together with one command 
+docker-compose up

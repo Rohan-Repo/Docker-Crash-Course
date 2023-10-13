@@ -1,0 +1,52 @@
+Basic commands:
+Show - docker images
+Delete - docker rmi imagename:tagName
+
+Show - docker ps 
+ShowAll - docker ps -a
+
+Start/Stop - docker start/stop containerID/containerName
+Delete - docker rm containerID/containerName
+
+Container Logs:
+docker logs containerID/containerName 
+
+Pull & Run Example:
+docker pull nginx:1.25.2
+docker run -d -p 1111:80 nginx:1.25.2
+Pull & Run in One Command:
+docker run -d -p 2222:80 nginx:1.24-bullseye
+
+Push Example:
+docker login -u userName
+
+docker build -t json-reader:0.0.2 .
+
+docker images
+
+docker tag json-reader:0.0.2 userName/json-reader:0.0.2
+
+docker images
+
+docker push userName/json-reader:0.0.2
+
+Static Example:
+
+To make Changes into HTML we have to rebuild our applications
+
+docker build -t nginx-static:0.0.1 .
+docker run -d -p 9876:80 nginx-static:0.0.1
+http://localhost:9876/
+
+Change & in NFL to build again then 
+docker build -t nginx-static:0.0.2 .
+docker run -d -p 1234:80 nginx-static:0.0.2
+http://localhost:1234/
+
+But with Volumes we eliminate that altogether:
+Navigate to http://localhost:1111/
+Make Changes in HTML & Refresh on Browser
+
+Docker-Compose
+Run multiple containers with different Languages and Architectures together with one command 
+docker-compose up
