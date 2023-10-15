@@ -8,11 +8,6 @@ services:
       - ./company-info-service:/usr/src/app
     ports:
       - 1234:5000
-    networks:
-      - my_network
-    # networks:
-    #   my-network:
-    #       ipv4_address: '172.17.0.11'
 
   # Instead of a Separate Docker File, we just pulled an Image here
   display-service:
@@ -24,16 +19,3 @@ services:
       # Is this image dependent on any other Service/Image, then start that first
     depends_on:
       - company-service
-    networks:
-      - my_network
-    # networks:
-    #   my-network:
-    #       ipv4_address: '172.27.224.1'
-
-  # client:
-  #   environment:
-  #     SERVER_URL=http://localhost:1234/
-
-networks:
-  my_network:
-    driver: bridge
